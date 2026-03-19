@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cotización Exclusiva - AYGA Asesoría y Gestión</title>
+    <title>Cotización Exclusiva - AYGA Gestión Industrial</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
@@ -13,226 +13,248 @@
        .text-ayga-gold { color: #C5A021; }
        .bg-ayga-gold { background-color: #C5A021; }
        .border-ayga-gold { border-color: #C5A021; }
-       .glow-button:hover { box-shadow: 0 0 15px #C5A021; transition: 0.3s; }
-       .pdf-page { padding: 40px; background: white; }
+       .glow-gold:hover { box-shadow: 0 0 20px rgba(197, 160, 33, 0.4); }
+       .timeline-line { width: 2px; background: linear-gradient(to bottom, #C5A021 0%, #002147 100%); }
+       .modal { transition: opacity 0.25s ease; }
+        @media print {.no-print { display: none!important; } }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-800">
+<body class="bg-gray-100">
 
-    <nav class="bg-ayga-blue p-4 sticky top-0 z-50 shadow-xl no-print">
+    <nav class="bg-ayga-blue/95 backdrop-blur-md p-4 sticky top-0 z-50 shadow-2xl no-print">
         <div class="container mx-auto flex justify-between items-center">
-            <div class="text-ayga-gold font-bold text-2xl tracking-tighter">AYGA</div>
-            <div class="hidden md:flex space-x-6 text-white text-sm items-center">
-                <span><i class="fas fa-phone"></i> 222 524 9941</span>
-                <button onclick="downloadPDF()" class="bg-ayga-gold text-ayga-blue px-4 py-2 rounded font-bold glow-button">
-                    DESCARGAR PDF
+            <div class="flex items-center space-x-2">
+                <span class="text-ayga-gold font-bold text-3xl tracking-tighter">AYGA</span>
+                <span class="text-white text-[10px] leading-tight border-l border-ayga-gold pl-2 uppercase hidden sm:block">Asesoría y<br>Gestión Administrativa</span>
+            </div>
+            <div class="flex items-center space-x-4">
+                <a href="tel:2225249941" class="text-white font-semibold hidden lg:block hover:text-ayga-gold transition">Tel: 222 524 9941</a>
+                <button onclick="generarPDF()" class="bg-ayga-gold text-ayga-blue px-6 py-2 rounded-full font-bold text-sm glow-gold transition-all transform hover:scale-105">
+                    DESCARGAR COTIZACIÓN PDF
                 </button>
             </div>
         </div>
     </nav>
 
-    <div id="quotation-content" class="container mx-auto my-10 max-w-4xl bg-white shadow-2xl rounded-lg overflow-hidden border border-gray-200">
+    <header class="bg-ayga-blue py-20 px-6 text-center border-b-8 border-ayga-gold relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10 pointer-events-none">
+            <svg class="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0 100 L100 0 L100 100 Z" fill="#C5A021"></path></svg>
+        </div>
+        <div class="container mx-auto relative z-10">
+            <h2 class="text-ayga-gold font-bold tracking-widest mb-4 uppercase">Estrategia Integral de Obra Mayor</h2>
+            <h1 class="text-white text-4xl md:text-6xl font-bold mb-6">Bodega Sanctorum: Ruta de Gestión</h1>
+            <p class="text-gray-300 max-w-2xl mx-auto text-lg">Preparado para: <span class="text-white font-bold">Jose Carrillo (Espacios Lerma SA de CV)</span></p>
+        </div>
+    </header>
+
+    <main id="capture-area" class="container mx-auto py-12 px-4 md:px-0">
         
-        <div class="p-10 border-b-4 border-ayga-gold">
-            <div class="flex justify-between items-start">
-                <div>
-                    <h1 class="text-ayga-blue text-3xl font-bold uppercase">Propuesta Técnica y Económica</h1>
-                    <p class="text-gray-500 mt-1">Proyecto: Bodega Industrial Sanctorum</p>
-                </div>
-                <div class="text-right">
-                    <p class="font-bold text-ayga-blue">AYGA ASESORÍA</p>
-                    <p class="text-xs text-gray-500">Gestión Integral de Obra Mayor</p>
-                </div>
+        <section class="max-w-4xl mx-auto mb-20">
+            <div class="bg-white p-8 rounded-xl shadow-lg border-l-8 border-ayga-gold">
+                <h3 class="text-ayga-blue text-2xl font-bold mb-4">¿Por qué es vital iniciar hoy?</h3>
+                <p class="text-gray-600 leading-relaxed mb-6">
+                    En el Corredor Estratégico de Cuautlancingo, una obra mayor (>1,500 m²) no se gestiona como un trámite simple. La carencia de escrituras y proyectos técnicos reportada en su diagnóstico sitúa al proyecto en una zona de riesgo administrativo. Nuestro objetivo es blindar su inversión desde el <strong>Paso 1 (Certeza Jurídica)</strong> para evitar clausuras que pueden costar hasta un 40% del valor de la obra.
+                </p>
             </div>
-        </div>
+        </section>
 
-        <div class="p-10">
-            <div class="mb-8 grid grid-cols-2 gap-4 text-sm">
-                <div>
-                    <h3 class="font-bold text-ayga-blue border-b border-ayga-gold mb-2 uppercase">Cliente</h3>
-                    <p class="font-semibold text-lg">Jose Carrillo</p>
-                    <p>Espacios Lerma SA de CV</p>
-                    <p>Email: jcarrillo@cgamx.com</p>
+        <section class="max-w-5xl mx-auto mb-20">
+            <h3 class="text-ayga-blue text-3xl font-bold text-center mb-12">Cronograma de Acciones 2026</h3>
+            <div class="relative">
+                <div class="absolute left-4 md:left-1/2 h-full timeline-line transform -translate-x-1/2"></div>
+                
+                <div class="mb-12 flex flex-col md:flex-row items-center w-full">
+                    <div class="md:w-1/2 md:pr-12 text-left md:text-right">
+                        <h4 class="text-ayga-blue font-bold text-xl">Fase 1: Legalización y Base</h4>
+                        <p class="text-sm text-gray-500">Semanas 1 - 8</p>
+                        <p class="text-gray-600 mt-2">Búsqueda de antecedentes registrales, pago de prediales rezagados y registro en el PUAM.</p>
+                    </div>
+                    <div class="w-10 h-10 bg-ayga-gold rounded-full border-4 border-white shadow z-10 my-4 md:my-0"></div>
+                    <div class="md:w-1/2 md:pl-12"></div>
                 </div>
-                <div class="text-right">
-                    <h3 class="font-bold text-ayga-blue border-b border-ayga-gold mb-2 uppercase">Referencia</h3>
-                    <p>Fecha: 19 de Marzo, 2026</p>
-                    <p>Ubicación: Río Papaloapan, Sanctorum</p>
-                </div>
-            </div>
 
-            <div class="mb-10">
-                <h2 class="text-xl font-bold text-ayga-blue mb-4 flex items-center">
-                    <span class="mr-2">📋</span> AUDITORÍA DE DOCUMENTACIÓN (REQUISITOS PENDIENTES)
-                </h2>
-                <div class="grid md:grid-cols-2 gap-3">
-                    <div class="flex items-center p-3 bg-red-50 border-l-4 border-red-500 rounded">
-                        <span class="text-red-500 font-bold mr-3">✘</span> <span class="text-xs">Escrituras / Certeza Jurídica</span>
+                <div class="mb-12 flex flex-col md:flex-row items-center w-full">
+                    <div class="md:w-1/2 md:pr-12"></div>
+                    <div class="w-10 h-10 bg-ayga-blue rounded-full border-4 border-white shadow z-10 my-4 md:my-0"></div>
+                    <div class="md:w-1/2 md:pl-12 text-left">
+                        <h4 class="text-ayga-blue font-bold text-xl">Fase 2: Proyecto Ejecutivo</h4>
+                        <p class="text-sm text-gray-500">Semanas 9 - 16</p>
+                        <p class="text-gray-600 mt-2">Integración de memorias de cálculo, planos estructurales e hidrosanitarios con firma de DRO.</p>
                     </div>
-                    <div class="flex items-center p-3 bg-red-50 border-l-4 border-red-500 rounded">
-                        <span class="text-red-500 font-bold mr-3">✘</span> <span class="text-xs">Predial 2025/2026</span>
+                </div>
+
+                <div class="mb-12 flex flex-col md:flex-row items-center w-full">
+                    <div class="md:w-1/2 md:pr-12 text-left md:text-right">
+                        <h4 class="text-ayga-blue font-bold text-xl">Fase 3: Dictámenes de Impacto</h4>
+                        <p class="text-sm text-gray-500">Semanas 17 - 28</p>
+                        <p class="text-gray-600 mt-2">Gestión ante SMADSOT (MIA) y SOSAPAC. Trámites críticos estatales y municipales.</p>
                     </div>
-                    <div class="flex items-center p-3 bg-red-50 border-l-4 border-red-500 rounded">
-                        <span class="text-red-500 font-bold mr-3">✘</span> <span class="text-xs">Registro PUAM Cuautlancingo</span>
-                    </div>
-                    <div class="flex items-center p-3 bg-red-50 border-l-4 border-red-500 rounded">
-                        <span class="text-red-500 font-bold mr-3">✘</span> <span class="text-xs">Alineamiento y No. Oficial</span>
-                    </div>
-                    <div class="flex items-center p-3 bg-red-50 border-l-4 border-red-500 rounded">
-                        <span class="text-red-500 font-bold mr-3">✘</span> <span class="text-xs">Dictamen de Uso de Suelo</span>
-                    </div>
-                    <div class="flex items-center p-3 bg-red-50 border-l-4 border-red-500 rounded">
-                        <span class="text-red-500 font-bold mr-3">✘</span> <span class="text-xs">Proyecto Ejecutivo (Arq/Inst)</span>
-                    </div>
-                    <div class="flex items-center p-3 bg-red-50 border-l-4 border-red-500 rounded">
-                        <span class="text-red-500 font-bold mr-3">✘</span> <span class="text-xs">Memoria de Cálculo Estructural</span>
-                    </div>
-                    <div class="flex items-center p-3 bg-red-50 border-l-4 border-red-500 rounded">
-                        <span class="text-red-500 font-bold mr-3">✘</span> <span class="text-xs">Manifestación de Impacto Ambiental</span>
-                    </div>
-                    <div class="flex items-center p-3 bg-red-50 border-l-4 border-red-500 rounded">
-                        <span class="text-red-500 font-bold mr-3">✘</span> <span class="text-xs">Plan de Manejo de Residuos</span>
-                    </div>
-                    <div class="flex items-center p-3 bg-red-50 border-l-4 border-red-500 rounded">
-                        <span class="text-red-500 font-bold mr-3">✘</span> <span class="text-xs">Factibilidad SOSAPAC</span>
-                    </div>
-                    <div class="flex items-center p-3 bg-red-50 border-l-4 border-red-500 rounded">
-                        <span class="text-red-500 font-bold mr-3">✘</span> <span class="text-xs">Estudio de Impacto Vial</span>
+                    <div class="w-10 h-10 bg-ayga-gold rounded-full border-4 border-white shadow z-10 my-4 md:my-0"></div>
+                    <div class="md:w-1/2 md:pl-12"></div>
+                </div>
+
+                <div class="mb-12 flex flex-col md:flex-row items-center w-full">
+                    <div class="md:w-1/2 md:pr-12"></div>
+                    <div class="w-10 h-10 bg-ayga-blue rounded-full border-4 border-white shadow z-10 my-4 md:my-0"></div>
+                    <div class="md:w-1/2 md:pl-12 text-left">
+                        <h4 class="text-ayga-blue font-bold text-xl">Fase 4: Licencia Final</h4>
+                        <p class="text-sm text-gray-500">Semanas 29 - 34</p>
+                        <p class="text-gray-600 mt-2">Ingreso cualitativo, pago de derechos finales y entrega de Licencia de Obra Mayor.</p>
                     </div>
                 </div>
             </div>
+        </section>
 
-            <div class="mb-10">
-                <h2 class="text-xl font-bold text-ayga-blue mb-4">💰 ESTRUCTURA DE HONORARIOS</h2>
-                <table class="w-full text-left text-sm">
-                    <thead>
-                        <tr class="bg-ayga-blue text-white">
-                            <th class="p-3">Fase de Gestión</th>
-                            <th class="p-3 text-right">Monto (MXN)</th>
-                        </tr>
-                    </thead>
-                    <tbody class="border">
-                        <tr class="border-b">
-                            <td class="p-3">Fase 1: Certeza Jurídica y Permisos Básicos</td>
-                            <td class="p-3 text-right">$45,000.00</td>
-                        </tr>
-                        <tr class="border-b">
-                            <td class="p-3">Fase 2: Coordinación Técnica e Integración de Proyecto</td>
-                            <td class="p-3 text-right">$65,000.00</td>
-                        </tr>
-                        <tr class="border-b">
-                            <td class="p-3">Fase 3: Dictámenes Estatales y Factibilidades Especiales</td>
-                            <td class="p-3 text-right">$85,000.00</td>
-                        </tr>
-                        <tr class="border-b">
-                            <td class="p-3">Fase 4: Obtención de Licencia de Obra Mayor</td>
-                            <td class="p-3 text-right">$40,000.00</td>
-                        </tr>
-                        <tr class="bg-gray-100 font-bold">
-                            <td class="p-3 text-ayga-blue">SUBTOTAL HONORARIOS AYGA</td>
-                            <td class="p-3 text-right text-ayga-blue text-lg">$235,000.00</td>
-                        </tr>
-                    </tbody>
+        <section class="max-w-4xl mx-auto bg-white rounded-2xl shadow-2xl border border-gray-200 overflow-hidden">
+            <div class="bg-ayga-blue p-6 text-white flex justify-between items-center">
+                <h3 class="text-xl font-bold">Resumen de Inversión (Honorarios)</h3>
+                <span class="text-ayga-gold font-bold">PROYECTO: SANCTORUM</span>
+            </div>
+            <div class="p-8">
+                <table class="w-full text-left">
+                    <tr class="border-b">
+                        <td class="py-4 font-semibold">Total Honorarios AYGA</td>
+                        <td class="py-4 text-right text-2xl font-bold text-ayga-blue">$235,000.00 <span class="text-sm font-normal text-gray-500">MXN + IVA</span></td>
+                    </tr>
+                    <tr class="text-xs text-gray-500">
+                        <td colspan="2" class="py-2 italic">
+                            *Nota: El esquema de pagos es 30% anticipo, 40% al ingreso de dictámenes estatales y 30% contra entrega de licencia. 
+                            Derechos de gobierno estimados (~$305,000 MXN) no incluidos.
+                        </td>
+                    </tr>
                 </table>
-                <p class="text-xs text-gray-500 mt-2">* Precios más IVA. No incluye pago de derechos gubernamentales (~$305,000 MXN).</p>
             </div>
+        </section>
+    </main>
 
-            <div class="mt-20 pt-10 border-t flex justify-between items-center text-xs text-gray-400">
-                <div>
-                    <p>Rodolfo Camarillo Garcia</p>
-                    <p>AYGA Asesoría y Gestión Administrativa</p>
+    <div class="fixed bottom-6 right-6 z- no-print">
+        <div id="chat-box" class="hidden flex flex-col bg-white w-80 h-[450px] shadow-2xl rounded-2xl border border-ayga-gold overflow-hidden mb-4">
+            <div class="bg-ayga-blue p-4 flex justify-between items-center">
+                <span class="text-white font-bold text-sm">Asistente Virtual AYGA</span>
+                <button onclick="toggleChat()" class="text-ayga-gold hover:text-white font-bold">✕</button>
+            </div>
+            <div id="chat-messages" class="flex-1 p-4 overflow-y-auto text-[11px] space-y-3 bg-gray-50">
+                <div class="bg-blue-100 p-3 rounded-lg text-ayga-blue">
+                    Hola <strong>Jose</strong>, he analizado tu proyecto de 5,315 m². ¿Deseas saber por qué la MIA toma 3 meses o por qué el SOSAPAC requiere proyecto de sembrado?
                 </div>
-                <div class="text-right">
-                    <p>Tel: 222 524 9941</p>
-                    <p>Email: ayga.contacto@gmail.com</p>
-                </div>
+            </div>
+            <div class="p-3 bg-white border-t flex space-x-2">
+                <input id="chat-input" type="text" placeholder="Escribe tu duda..." class="flex-1 border border-gray-300 p-2 rounded-lg text-xs outline-none focus:border-ayga-gold">
+                <button onclick="enviarMensaje()" class="bg-ayga-gold text-white px-3 py-2 rounded-lg font-bold transition hover:bg-ayga-blue">➜</button>
             </div>
         </div>
-    </div>
-
-    <div id="chatbot-container" class="fixed bottom-5 right-5 z- no-print">
-        <div id="chat-window" class="hidden w-80 bg-white shadow-2xl rounded-xl border border-ayga-gold flex flex-col mb-4 overflow-hidden">
-            <div class="bg-ayga-blue text-white p-4 font-bold text-sm flex justify-between items-center">
-                <span>Asistente Experto AYGA</span>
-                <button onclick="toggleChat()" class="text-ayga-gold">✕</button>
-            </div>
-            <div id="chat-messages" class="h-64 p-4 overflow-y-auto text-xs space-y-3">
-                <div class="bg-gray-100 p-2 rounded">Hola Jose. Conozco los detalles de tu bodega en Sanctorum. ¿Tienes dudas sobre los tiempos de SOSAPAC o el costo de la Licencia?</div>
-            </div>
-            <div class="p-3 border-t flex">
-                <input id="chat-input" type="text" placeholder="Escribe tu duda..." class="flex-1 text-xs border p-2 rounded-l outline-none">
-                <button onclick="askChat()" class="bg-ayga-gold px-3 text-white rounded-r">➜</button>
-            </div>
-        </div>
-        <button onclick="toggleChat()" class="bg-ayga-blue text-ayga-gold w-14 h-14 rounded-full shadow-2xl flex items-center justify-center text-2xl animate-bounce glow-button">
+        <button onclick="toggleChat()" class="bg-ayga-blue text-ayga-gold w-16 h-16 rounded-full shadow-2xl flex items-center justify-center text-3xl border-4 border-ayga-gold hover:scale-110 transition glow-gold">
             💬
         </button>
     </div>
 
-    <footer class="bg-ayga-blue text-white py-10 no-print">
-        <div class="container mx-auto px-4 text-center">
-            <p class="text-ayga-gold font-bold mb-4">AYGA - Gestión Integral Industrial</p>
-            <div class="flex justify-center space-x-6 text-xs uppercase tracking-widest mb-6">
-                <a href="#" class="hover:text-ayga-gold">Aviso de Privacidad</a>
-                <a href="#" class="hover:text-ayga-gold">Términos y Condiciones</a>
-                <a href="https://wa.me/522225253621" class="hover:text-ayga-gold">WhatsApp Directo</a>
+    <footer class="bg-ayga-blue py-12 px-6 mt-20 no-print">
+        <div class="container mx-auto text-center">
+            <div class="flex flex-wrap justify-center space-x-4 md:space-x-8 mb-8">
+                <button onclick="openModal('modal-privacidad')" class="text-white text-xs hover:text-ayga-gold uppercase tracking-widest transition">Aviso de Privacidad</button>
+                <button onclick="openModal('modal-terminos')" class="text-white text-xs hover:text-ayga-gold uppercase tracking-widest transition">Términos y Condiciones</button>
+                <a href="https://wa.me/522225253621" class="text-ayga-gold text-xs font-bold uppercase tracking-widest transition border border-ayga-gold px-4 py-2 rounded">WhatsApp de Seguimiento</a>
             </div>
-            <p class="text-gray-500 text-[10px]">© 2026 AYGA ASESORÍA. Rodolfo Camarillo Garcia. Calle Santa Maria 31, San Juan Cuautlancingo, Pue.</p>
+            <p class="text-gray-500 text-[10px]">&copy; 2026 AYGA Asesoría y Gestión Administrativa. Rodolfo Camarillo Garcia. Calle Santa Maria 31, San Juan Cuautlancingo, Puebla.</p>
         </div>
     </footer>
 
+    <div id="modal-privacidad" class="fixed inset-0 bg-black/50 hidden flex items-center justify-center z- px-4">
+        <div class="bg-white p-8 rounded-xl max-w-lg shadow-2xl">
+            <h4 class="text-ayga-blue font-bold text-xl mb-4">Aviso de Privacidad</h4>
+            <div class="text-[10px] text-gray-600 space-y-2 overflow-y-auto max-h-60">
+                <p><strong>Responsable:</strong> Rodolfo Camarillo Garcia (AYGA).</p>
+                <p><strong>Uso de datos:</strong> Los datos personales de Jose Carrillo y Espacios Lerma SA de CV serán utilizados estrictamente para la integración de expedientes técnicos y gestiones ante el Ayuntamiento de Cuautlancingo y dependencias estatales como SMADSOT y SOSAPAC.</p>
+                <p><strong>Domicilio:</strong> Calle Santa Maria 31, Fracc. Santa Maria 2, San Juan Cuautlancingo, Puebla.</p>
+            </div>
+            <button onclick="closeModal('modal-privacidad')" class="mt-6 bg-ayga-blue text-white px-6 py-2 rounded font-bold w-full">CERRAR</button>
+        </div>
+    </div>
+
+    <div id="modal-terminos" class="fixed inset-0 bg-black/50 hidden flex items-center justify-center z- px-4">
+        <div class="bg-white p-8 rounded-xl max-w-lg shadow-2xl">
+            <h4 class="text-ayga-blue font-bold text-xl mb-4">Términos y Condiciones</h4>
+            <div class="text-[10px] text-gray-600 space-y-2 overflow-y-auto max-h-60">
+                <p>1. Los honorarios ($235,000 MXN) cubren la gestión y coordinación técnica. No incluyen el pago de derechos de gobierno.</p>
+                <p>2. Los tiempos (28-34 semanas) son estimados y dependen de los tiempos de resolución de las autoridades.</p>
+                <p>3. El cliente se obliga a entregar la información legal verídica para el inicio de la Fase 1.</p>
+                <p>4. Pagos: 30% anticipo, 40% fase intermedia, 30% entrega final.</p>
+            </div>
+            <button onclick="closeModal('modal-terminos')" class="mt-6 bg-ayga-blue text-white px-6 py-2 rounded font-bold w-full">ACEPTAR</button>
+        </div>
+    </div>
+
     <script>
-        function downloadPDF() {
-            const element = document.getElementById('quotation-content');
+        // Funcionalidad PDF
+        function generarPDF() {
+            const element = document.getElementById('capture-area');
             const opt = {
-                margin: 0,
-                filename: 'Cotizacion_AYGA_Lerma_Sanctorum.pdf',
+                margin: 0.5,
+                filename: 'Cotizacion_AYGA_Sanctorum.pdf',
                 image: { type: 'jpeg', quality: 0.98 },
-                html2canvas: { scale: 2 },
+                html2canvas: { scale: 2, useCORS: true },
                 jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
             };
             html2pdf().set(opt).from(element).save();
         }
 
-        function toggleChat() {
-            document.getElementById('chat-window').classList.toggle('hidden');
-        }
+        // Modales
+        function openModal(id) { document.getElementById(id).classList.remove('hidden'); }
+        function closeModal(id) { document.getElementById(id).classList.add('hidden'); }
 
-        function askChat() {
+        // Chatbot Logic
+        function toggleChat() { document.getElementById('chat-box').classList.toggle('hidden'); }
+
+        function enviarMensaje() {
             const input = document.getElementById('chat-input');
-            const msgs = document.getElementById('chat-messages');
-            if (input.value.trim() === "") return;
-
-            const userMsg = document.createElement('div');
-            userMsg.className = "text-right bg-blue-50 p-2 rounded italic ml-4";
-            userMsg.innerText = input.value;
-            msgs.appendChild(userMsg);
-
-            const botMsg = document.createElement('div');
-            botMsg.className = "bg-gray-100 p-2 rounded mr-4";
+            const msgArea = document.getElementById('chat-messages');
+            const text = input.value.trim().toLowerCase();
             
-            // Lógica simple de respuestas basadas en investigación
-            const text = input.value.toLowerCase();
+            if (text === "") return;
+
+            // Mostrar mensaje usuario
+            const uMsg = document.createElement('div');
+            uMsg.className = "bg-gray-200 p-2 rounded-lg text-right text-ayga-blue ml-10 mb-2";
+            uMsg.innerText = input.value;
+            msgArea.appendChild(uMsg);
+
+            // Respuesta lógica AYGA
+            let respuesta = "Esta es una consulta técnica detallada. Para darte certeza total, te conectaré directamente a mi WhatsApp.";
+            let esWhatsApp = true;
+
             if (text.includes("tiempo") |
 
 | text.includes("meses")) {
-                botMsg.innerText = "La gestión integral para esta bodega de 5,315m2 toma entre 7 y 8 meses debido a los dictámenes estatales de Medio Ambiente.";
+                respuesta = "La gestión integral toma de 7 a 8 meses. El cuello de botella es la MIA estatal, pero en AYGA ingresamos proyectos paralelos para optimizar tiempos.";
+                esWhatsApp = false;
             } else if (text.includes("sosapac") |
 
 | text.includes("agua")) {
-                botMsg.innerText = "Requerimos desarrollar la ingeniería hidráulica y de sembrado antes de solicitar la factibilidad al SOSAPAC.";
-            } else if (text.includes("derechos") |
+                respuesta = "SOSAPAC en Cuautlancingo requiere planos de sembrado y proyecto hidrosanitario antes de dar la factibilidad. Nosotros lo integramos en la Fase 3.";
+                esWhatsApp = false;
+            } else if (text.includes("pago") |
 
-| text.includes("impuesto")) {
-                botMsg.innerText = "Los derechos municipales estimados son de $305,000 MXN, calculados sobre la Ley de Ingresos 2026 de Cuautlancingo.";
-            } else {
-                botMsg.innerHTML = "Esa es una duda técnica importante. Te conectaré directo con Rodolfo en WhatsApp para resolverla: <a href='https://wa.me/522225253621' class='text-blue-600 font-bold'>Clic aquí</a>";
+| text.includes("costo") |
+| text.includes("honorarios")) {
+                respuesta = "Nuestros honorarios son de $235,000 MXN en un esquema 30/40/30. Los derechos de gobierno para una obra de 5,315 m² son de aproximadamente $305,000 MXN.";
+                esWhatsApp = false;
             }
-            
-            msgs.appendChild(botMsg);
+
+            setTimeout(() => {
+                const bMsg = document.createElement('div');
+                bMsg.className = "bg-blue-100 p-2 rounded-lg text-ayga-blue mr-10 mb-2 border-l-4 border-ayga-gold";
+                bMsg.innerHTML = respuesta + (esWhatsApp? '<br><br><a href="https://wa.me/522225253621" class="font-bold text-ayga-gold uppercase">Contactar Especialista ➜</a>' : '');
+                msgArea.appendChild(bMsg);
+                msgArea.scrollTop = msgArea.scrollHeight;
+            }, 500);
+
             input.value = "";
-            msgs.scrollTop = msgs.scrollHeight;
         }
+
+        // Capturar tecla Enter en chat
+        document.getElementById('chat-input').addEventListener('keypress', function (e) {
+            if (e.key === 'Enter') enviarMensaje();
+        });
     </script>
 </body>
 </html>
